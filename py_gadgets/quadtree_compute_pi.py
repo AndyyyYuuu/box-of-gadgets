@@ -1,6 +1,6 @@
 # Andy Yu
 # Sep 15, 2023
-# Pi Calculator
+# Pi Calculator, Quadtree
 
 import math
 CANVAS_SIZE = 1
