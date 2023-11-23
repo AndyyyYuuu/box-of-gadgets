@@ -29,6 +29,8 @@ def get_func(string):
         if inp[i] == "
     
 '''
+def process_input(string):
+    return string.replace("^", " and ").replace("v", " or ").replace("-", " not ")
 
 def is_valid(atomics, expressions):
     
@@ -46,7 +48,7 @@ def is_valid(atomics, expressions):
             test_expression = expressions[col]
             for atomic in list(atomics.keys()):
                 test_expression = test_expression.replace(str(atomic), str(atomics[atomic][row]))
-            row_bools.append(int(eval(test_expression)))
+            row_bools.append(int(eval(process_input(test_expression))))
         if 0 in row_bools and row_bools.index(0) == len(row_bools)-1:
             return False
     return True
